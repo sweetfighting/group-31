@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/FHEConv.dir/main.cpp.o  -o FHEConv  /home/ubuntu/.local/lib/libseal-4.1.a -pthread 

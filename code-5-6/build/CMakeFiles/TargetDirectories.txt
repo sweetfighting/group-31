@@ -1,0 +1,3 @@
+/home/ubuntu/Desktop/FHE_Conv/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/FHE_Conv/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/FHE_Conv/build/CMakeFiles/FHEConv.dir

@@ -1,0 +1,28 @@
+以下仅为一次容器环境示例，正式报告必须使用自己的电脑重新测试：
+
+CPU: SSSE3=1 AES-NI=1 PCLMUL=1 AVX2=1 VAES=1
+Buffer: 4.0 MiB, iterations: 4
+
+AES blocks / reference              66.98 MiB/s
+AES blocks / t-table               152.12 MiB/s
+AES blocks / shuffle-ssse3          42.79 MiB/s
+AES blocks / aes-ni               6430.32 MiB/s
+AES blocks / vaes-256            12899.42 MiB/s
+
+CTR / reference                     65.81 MiB/s
+CTR / t-table                      154.64 MiB/s
+CTR / shuffle-ssse3                 42.04 MiB/s
+CTR / aes-ni                       773.71 MiB/s
+CTR / vaes-256                    1153.19 MiB/s
+
+GCM / reference / PCLMUL            18.81 MiB/s
+GCM / t-table / PCLMUL              22.39 MiB/s
+GCM / shuffle-ssse3 / PCLMUL        16.28 MiB/s
+GCM / aes-ni / PCLMUL               25.62 MiB/s
+GCM / vaes-256 / PCLMUL             26.00 MiB/s
+
+XTS / reference                     63.73 MiB/s
+XTS / t-table                      141.10 MiB/s
+XTS / shuffle-ssse3                 41.56 MiB/s
+XTS / aes-ni                       644.56 MiB/s
+XTS / vaes-256                     945.52 MiB/s

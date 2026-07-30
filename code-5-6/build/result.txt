@@ -1,0 +1,68 @@
+====================================================
+ FHE Homework 5 and 6: Encrypted 2D Convolution
+ Microsoft SEAL 4.1.1 / CKKS
+====================================================
+
+CKKS parameters:
+  poly_modulus_degree : 8192
+  slot count          : 4096
+  initial scale       : 2^40
+
+Input matrix X:
+     1.000     2.000     3.000     4.000
+     5.000     6.000     7.000     8.000
+     9.000    10.000    11.000    12.000
+    13.000    14.000    15.000    16.000
+
+Kernel K:
+     1.000     1.000     1.000
+     1.000     1.000     1.000
+     1.000     1.000     1.000
+
+Plaintext convolution result:
+     54.000000     63.000000
+     90.000000     99.000000
+
+Input has been encoded and encrypted.
+
+====================================================
+ Homework 5: Naive encrypted convolution
+====================================================
+Decrypted encrypted-convolution result:
+     53.999997     63.000001
+     90.000000     99.000000
+
+Maximum absolute error: 2.57472892e-06
+Correctness verification: PASS
+Rotation count: 8
+
+====================================================
+ Homework 6: Rotation-optimized convolution
+====================================================
+Decrypted optimized result:
+     54.000000     63.000000
+     90.000000     99.000000
+
+Maximum absolute error: 3.93395098e-07
+Correctness verification: PASS
+
+Rotation comparison:
+  Naive method     : 8
+  Optimized method : 4
+  Reduction        : 4
+  Reduction ratio  : 50.00%
+
+Theoretical analysis:
+  The naive method uses nine kernel offsets.
+  Offset 0 requires no rotation, so it uses 8 rotations.
+  The all-one kernel is separable into horizontal and
+  vertical 3-element accumulations.
+  Horizontal accumulation needs rotations 1 and 2.
+  Vertical accumulation needs rotations 4 and 8.
+  Therefore the optimized method uses 4 rotations.
+  Under this separable row-column accumulation model,
+  the implementation reaches the 4-rotation lower bound.
+
+====================================================
+ All experiments completed successfully.
+====================================================
